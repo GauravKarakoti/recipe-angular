@@ -10,7 +10,7 @@ import { PlaceholderDirective } from "../shared/placeholder/placeholder.directiv
 
 @Component({
   selector: 'app-auth',
-  imports: [FormsModule, LoadingSpinner, CommonModule, Alert, PlaceholderDirective],
+  imports: [FormsModule, LoadingSpinner, CommonModule, PlaceholderDirective],
   templateUrl: './auth.html',
 })
 export class Auth implements OnDestroy {
