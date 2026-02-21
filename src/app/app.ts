@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Header } from './header/header';
 import { RouterOutlet } from '@angular/router';
-import { AuthService } from './auth/auth.service';
 import { CoreModule } from './core-module';
 import { LoggingService } from './logging.service';
 import { SharedModule } from './shared/shared-module';
+import { Store } from '@ngrx/store';
+import * as fromApp from './store/app.reducer';
+import * as AuthActions from './auth/store/auth.action';
 
 @Component({
   selector: 'app-root',
@@ -14,9 +16,9 @@ import { SharedModule } from './shared/shared-module';
   // providers: [LoggingService]
 })
 export class App implements OnInit {
-  constructor(private authService: AuthService, private loggingService: LoggingService) {}
+  constructor(private store: Store<fromApp.AppState>, private loggingService: LoggingService) {}
   ngOnInit() {
-    this.authService.autoLogin();
+    this.store.dispatch(new AuthActions.AutoLogin());
     this.loggingService.printLog("Welcome to recipe-angular")
   }
 }

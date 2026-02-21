@@ -4,7 +4,7 @@ import { AuthGuard } from '../auth/auth.guard';
 import { RecipeStart } from './recipe-start/recipe-start';
 import { RecipeEdit } from './recipe-edit/recipe-edit';
 import { RecipeDetail } from './recipe-detail/recipe-detail';
-import { RecipesResolverService } from './recipe-start/recipes-resolver.service';
+import { RecipesResolverService } from './recipes-resolver.service';
 
 export const recipesRoutes: Routes = [
   { 
